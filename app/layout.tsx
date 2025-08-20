@@ -59,6 +59,18 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VM8DPCM71C"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-VM8DPCM71C');
+            `,
+          }}
+        />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
@@ -101,6 +113,7 @@ html {
   }
 }
         `}</style>
+        
       </head>
       <body suppressHydrationWarning>
         <ThemeProvider
@@ -109,26 +122,11 @@ html {
           enableSystem
           disableTransitionOnChange
         >
-          {isAdminRoute ? (
-            // Admin routes - no header or footer
-            <main role="main" className="min-h-screen">
-              {children}
-            </main>
-          ) : (
-            // Regular routes - with header and footer
-            <>
-              {/* Skip to content link for accessibility */}
-              <a href="#main-content" className="skip-link">
-                Skip to main content
-              </a>
-              
               <Header />
               <main id="main-content" className="pt-16" role="main">
                 {children}
               </main>
               <Footer />
-            </>
-          )}
         </ThemeProvider>
       </body>
     </html>
