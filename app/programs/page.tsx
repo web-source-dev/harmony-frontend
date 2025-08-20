@@ -103,9 +103,9 @@ export default function ProgramsPage() {
     <div className="min-h-screen bg-white">
 
       {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4">
+      <div className="bg-gray-50 py-3 sm:py-4">
         <div className="container mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm">
+          <div className="flex items-center space-x-2 text-xs sm:text-sm">
             <Link href="/" className="text-black hover:text-gray-800">
               Home
             </Link>
@@ -116,15 +116,15 @@ export default function ProgramsPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div
             className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Our Music Programs</h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Our Music Programs</h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed px-4">
               Comprehensive music programs designed to support individuals at every stage of their musical journey.
               Each program is tailored to meet unique needs and promote musical growth, self-expression, and community
               participation through the universal language of music.
@@ -134,19 +134,19 @@ export default function ProgramsPage() {
       </section>
 
       {/* Programs Overview */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="space-y-16">
+          <div className="space-y-12 sm:space-y-16">
             {programs.map((program, index) => (
               <div
                 key={program.id}
-                className={`${index % 2 === 1 ? "lg:flex-row-reverse" : ""} lg:flex items-center gap-12 transition-all duration-1000 ${
+                className={`${index % 2 === 1 ? "lg:flex-row-reverse" : ""} lg:flex items-center gap-8 sm:gap-12 transition-all duration-1000 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${index * 300}ms` }}
               >
                 <div className="lg:w-1/2">
-                  <Card className="shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-500">
+                  <Card className="shadow-xl border-0 rounded-xl sm:rounded-2xl overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-500">
                     <div className="aspect-video bg-gray-200 flex items-center justify-center">
                       <img
                         src={program.id === "music-therapy" 
@@ -164,25 +164,25 @@ export default function ProgramsPage() {
                   </Card>
                 </div>
 
-                <div className="lg:w-1/2 mt-8 lg:mt-0">
-                  <div className="flex items-center mb-4">
-                    <div className={`w-12 h-12 bg-black rounded-xl flex items-center justify-center mr-4`}>
-                      <program.icon className="h-6 w-6 text-white" />
+                <div className="lg:w-1/2 mt-6 sm:mt-8 lg:mt-0">
+                  <div className="flex items-center mb-3 sm:mb-4">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-black rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4`}>
+                      <program.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900">{program.title}</h2>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">{program.title}</h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">{program.fullDescription}</p>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">{program.fullDescription}</p>
 
-                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                        <Users className="h-4 w-4 mr-2 text-black" />
+                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center text-sm sm:text-base">
+                        <Users className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-black" />
                         Age Groups
                       </h4>
                       <div className="space-y-1">
                         {program.ageGroups.map((age, i) => (
-                          <Badge key={i} variant="secondary" className="mr-2 mb-1">
+                          <Badge key={i} variant="secondary" className="mr-2 mb-1 text-xs sm:text-sm">
                             {age}
                           </Badge>
                         ))}
@@ -190,21 +190,21 @@ export default function ProgramsPage() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                        <Clock className="h-4 w-4 mr-2 text-black" />
+                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center text-sm sm:text-base">
+                        <Clock className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-black" />
                         Schedule
                       </h4>
-                      <p className="text-sm text-gray-600">{program.duration}</p>
-                      <p className="text-sm text-gray-600">{program.frequency}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{program.duration}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{program.frequency}</p>
                     </div>
                   </div>
 
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">Program Features:</h4>
-                    <div className="grid md:grid-cols-2 gap-2">
+                  <div className="mb-4 sm:mb-6">
+                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Program Features:</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-1 sm:gap-2">
                       {program.features.map((feature, i) => (
-                        <div key={i} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-black mr-2 flex-shrink-0" />
+                        <div key={i} className="flex items-center text-xs sm:text-sm text-gray-600">
+                          <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-black mr-2 flex-shrink-0" />
                           {feature}
                         </div>
                       ))}
@@ -213,7 +213,7 @@ export default function ProgramsPage() {
 
                   <Link href="/contact">
                     <Button
-                      className={`bg-black text-white hover:shadow-lg transition-all duration-300 rounded-full px-6 py-2 hover:scale-105`}
+                      className={`bg-black text-white hover:shadow-lg transition-all duration-300 rounded-full px-4 sm:px-6 py-2 text-sm sm:text-base hover:scale-105`}
                     >
                       Learn More & Enroll
                     </Button>
@@ -226,20 +226,20 @@ export default function ProgramsPage() {
       </section>
 
       {/* Program Benefits */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div
-            className={`text-center mb-16 transition-all duration-1000 ${
+            className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Why Choose Our Music Programs?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Why Choose Our Music Programs?</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Our evidence-based approach and personalized music instruction ensure the best outcomes for every individual.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { icon: Star, title: "Evidence-Based", description: "All music programs use proven, research-backed methods" },
               {
@@ -256,19 +256,19 @@ export default function ProgramsPage() {
             ].map((benefit, index) => (
               <Card
                 key={index}
-                className={`text-center shadow-lg border-0 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-500 ${
+                className={`text-center shadow-lg border-0 rounded-xl sm:rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-4">
-                    <benefit.icon className="h-8 w-8 text-white" />
+                  <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-lg sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+                    <benefit.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-900">{benefit.title}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl font-bold text-gray-900">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -277,33 +277,33 @@ export default function ProgramsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-black text-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-black text-white">
         <div className="container mx-auto px-4 text-center">
           <h2
-            className={`text-4xl font-bold mb-6 transition-all duration-1000 ${
+            className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             Ready to Get Started?
           </h2>
           <p
-            className={`text-xl mb-8 opacity-90 transition-all duration-1000 delay-300 ${
+            className={`text-base sm:text-lg md:text-xl mb-6 sm:mb-8 opacity-90 transition-all duration-1000 delay-300 px-4 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             Contact us today to learn more about our programs and how we can support you or your loved one.
           </p>
           <div
-            className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-1000 delay-500 ${
+            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center transition-all duration-1000 delay-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105"
+                className="w-full bg-white text-black hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg rounded-full transition-all duration-300 hover:scale-105"
               >
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Contact Us Today
               </Button>
             </Link>
@@ -311,7 +311,7 @@ export default function ProgramsPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg rounded-full bg-transparent transition-all duration-300 hover:scale-105"
+                className="w-full border-2 border-white text-white hover:bg-white hover:text-black px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg rounded-full bg-transparent transition-all duration-300 hover:scale-105"
               >
                 View Services
               </Button>

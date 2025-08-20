@@ -78,12 +78,12 @@ export const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white" : "bg-white"
+        isScrolled ? "bg-white shadow-md" : "bg-white"
       }`}
       role="banner"
     >
       <nav className="container mx-auto px-4" role="navigation" aria-label="Main navigation">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           <Link 
             href="/" 
             className="flex items-center focus:outline-none rounded-lg p-1 transition-transform hover:scale-105"
@@ -92,19 +92,19 @@ export const Header = () => {
             <img 
               src="https://static.wixstatic.com/media/e65032_cd33c8b9dc8d4a4b986f7fa5ac06df3e~mv2.jpg/v1/crop/x_337,y_634,w_1319,h_753/fill/w_354,h_202,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Harmony%204%20All%20logo_G2%20(2).jpg"
               alt="Harmony 4 All Logo"
-              className="w-20 h-20 rounded-xl object-contain"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-contain"
             />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8" role="menubar">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8" role="menubar">
             {navLinks.map((link, index) => {
               const isActive = isActiveLink(link.href)
               return (
                 <Link
                   key={index}
                   href={link.href}
-                  className={`font-medium transition-all duration-300 focus:outline-none rounded-lg px-3 py-2 relative ${
+                  className={`font-medium transition-all duration-300 focus:outline-none rounded-lg px-2 sm:px-3 py-2 relative text-sm sm:text-base ${
                     isActive
                       ? "text-black font-semibold"
                       : "text-gray-700 hover:text-black hover:bg-gray-50"
@@ -121,11 +121,12 @@ export const Header = () => {
             })}
             <Link href="/donate">
               <Button 
-                className="relative overflow-hidden bg-gradient-to-r from-black-600 to-black-700 hover:from-black-700 hover:to-blak-800 text-white rounded-full px-8 py-4 transition-all duration-500 hover:scale-110 focus:outline-none shadow-xl hover:shadow-2xl font-bold text-lg group transform hover:-translate-y-1"
+                className="relative overflow-hidden bg-gradient-to-r from-black-600 to-black-700 hover:from-black-700 hover:to-blak-800 text-white rounded-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-500 hover:scale-110 focus:outline-none shadow-xl hover:shadow-2xl font-bold text-sm sm:text-base lg:text-lg group transform hover:-translate-y-1"
                 aria-label="Donate to Harmony 4 All"
               >
-                <Heart className="mr-3 h-5 w-5 animate-pulse" />
-                <span>Donate Now</span>
+                <Heart className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
+                <span className="hidden sm:inline">Donate Now</span>
+                <span className="sm:hidden">Donate</span>
                 <div className="absolute inset-0 bg-white/20 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </Button>
             </Link>
@@ -136,16 +137,16 @@ export const Header = () => {
             ref={menuButtonRef}
             variant="ghost"
             size="icon"
-            className="md:hidden focus:outline-none hover:bg-gray-100"
+            className="lg:hidden focus:outline-none hover:bg-gray-100 p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-gray-900" aria-hidden="true" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900" aria-hidden="true" />
             ) : (
-              <Menu className="h-6 w-6 text-gray-900" aria-hidden="true" />
+              <Menu className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900" aria-hidden="true" />
             )}
           </Button>
         </div>
@@ -155,18 +156,18 @@ export const Header = () => {
           <div 
             ref={mobileMenuRef}
             id="mobile-menu"
-            className="md:hidden bg-white border-t shadow-lg animate-in slide-in-from-top-2 duration-300"
+            className="lg:hidden bg-white border-t shadow-lg animate-in slide-in-from-top-2 duration-300 max-h-[calc(100vh-4rem)] overflow-y-auto"
             role="menu"
             aria-label="Mobile navigation menu"
           >
-            <div className="px-4 py-6 space-y-2">
+            <div className="px-4 py-4 sm:py-6 space-y-1 sm:space-y-2">
               {navLinks.map((link, index) => {
                 const isActive = isActiveLink(link.href)
                 return (
                   <Link
                     key={index}
                     href={link.href}
-                    className={`block font-medium transition-all duration-300 focus:outline-none rounded-lg px-3 py-2 ${
+                    className={`block font-medium transition-all duration-300 focus:outline-none rounded-lg px-3 py-2 text-sm sm:text-base ${
                       isActive 
                         ? "text-black bg-gray-50 font-semibold border-l-4 border-black" 
                         : "text-gray-700 hover:text-black hover:bg-gray-50"
@@ -181,10 +182,10 @@ export const Header = () => {
               })}
               <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button 
-                  className="w-full relative overflow-hidden bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-full px-6 py-4 mt-4 focus:outline-none shadow-xl hover:shadow-2xl transition-all duration-500 font-bold text-lg group transform hover:-translate-y-1"
+                  className="w-full relative overflow-hidden bg-black text-white rounded-full px-4 sm:px-6 py-3 sm:py-4 mt-3 sm:mt-4 focus:outline-none shadow-xl hover:shadow-2xl transition-all duration-500 font-bold text-sm sm:text-base group transform hover:-translate-y-1"
                   aria-label="Donate to Harmony 4 All"
                 >
-                  <Heart className="mr-3 h-5 w-5 animate-pulse" />
+                  <Heart className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
                   <span>Donate Now</span>
                   <div className="absolute inset-0 bg-white/20 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </Button>

@@ -54,7 +54,6 @@ export default async function RootLayout({
   // Check if this is an admin route
   const headersList = await headers()
   const pathname = headersList.get('x-invoke-path') || ''
-  const isAdminRoute = pathname.startsWith('/admin') || pathname.includes('/admin')
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -71,49 +70,6 @@ export default async function RootLayout({
             `,
           }}
         />
-        <style>{`
-html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
-}
-
-/* Skip to content link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: #000;
-  color: white;
-  padding: 8px;
-  text-decoration: none;
-  border-radius: 4px;
-  z-index: 1000;
-  transition: top 0.3s;
-}
-
-.skip-link:focus {
-  top: 6px;
-}
-
-/* Focus styles for better accessibility */
-*:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-        `}</style>
-        
       </head>
       <body suppressHydrationWarning>
         <ThemeProvider
@@ -122,11 +78,11 @@ html {
           enableSystem
           disableTransitionOnChange
         >
-              <Header />
-              <main id="main-content" className="pt-16" role="main">
-                {children}
-              </main>
-              <Footer />
+          <Header />
+          <main id="main-content" className="pt-14 sm:pt-16" role="main">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

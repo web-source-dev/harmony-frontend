@@ -108,16 +108,16 @@ const HeroCarousel = () => {
           </div>
 
           <div className="relative z-10 container mx-auto px-4 text-center h-full flex items-center">
-            <div className="max-w-4xl mx-auto text-white">
+            <div className="max-w-4xl mx-auto text-white px-4">
               <h1
-                className={`text-5xl md:text-7xl font-bold mb-6 leading-tight transition-all duration-1000 delay-300 ${
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight transition-all duration-1000 delay-300 ${
                   index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
                 {slide.title}
               </h1>
               <p
-                className={`text-xl md:text-2xl mb-8 leading-relaxed transition-all duration-1000 delay-500 ${
+                className={`text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 leading-relaxed transition-all duration-1000 delay-500 ${
                   index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -139,33 +139,33 @@ const HeroCarousel = () => {
       <Button
         variant="outline"
         size="icon"
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 rounded-full z-20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent"
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 rounded-full z-20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent w-10 h-10 sm:w-12 sm:h-12"
         onClick={prevSlide}
         aria-label="Previous slide"
       >
-        <ChevronLeft className="h-6 w-6" aria-hidden="true" />
+        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" aria-hidden="true" />
       </Button>
 
       <Button
         variant="outline"
         size="icon"
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 rounded-full z-20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent"
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 rounded-full z-20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent w-10 h-10 sm:w-12 sm:h-12"
         onClick={nextSlide}
         aria-label="Next slide"
       >
-        <ChevronRight className="h-6 w-6" aria-hidden="true" />
+        <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" aria-hidden="true" />
       </Button>
 
       {/* Slide Indicators */}
       <div 
-        className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20"
+        className="absolute bottom-8 sm:bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20"
         role="tablist"
         aria-label="Carousel slide indicators"
       >
         {slides.map((slide, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent ${
               index === currentSlide ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
             }`}
             onClick={() => goToSlide(index)}
@@ -202,34 +202,34 @@ const AboutSection = () => {
   }, [])
 
   return (
-    <section id="about-section" className="py-20 bg-white">
+    <section id="about-section" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div
-            className={`text-center mb-16 transition-all duration-1000 ${
+            className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Who We Are</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Who We Are</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Founded on the belief that every individual deserves the opportunity to reach their full potential,
               Harmony 4 All has been a beacon of hope and support for families and individuals with disabilities.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center mb-8 sm:mb-12 md:mb-16">
             <div
-              className={`transition-all duration-1000 delay-300 ${
+              className={`transition-all duration-1000 delay-300 order-2 md:order-1 ${
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
               }`}
             >
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Our Mission</h3>
+              <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed">
                 We provide comprehensive therapy services, educational programs, and community support to empower
                 individuals with disabilities and their families. Our approach is holistic, person-centered, and
                 designed to foster independence, confidence, and joy.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { icon: Heart, text: "Compassionate Care" },
                   { icon: Users, text: "Inclusive Community" },
@@ -242,14 +242,14 @@ const AboutSection = () => {
                       isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                     }`}
                   >
-                    <item.icon className="h-6 w-6 text-black mr-3" />
-                    <span className="text-gray-700 font-medium">{item.text}</span>
+                    <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-black mr-2 sm:mr-3 flex-shrink-0" />
+                    <span className="text-sm sm:text-base text-gray-700 font-medium">{item.text}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div
-              className={`relative transition-all duration-1000 delay-500 ${
+              className={`relative transition-all duration-1000 delay-500 order-1 md:order-2 ${
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
               }`}
             >
@@ -258,9 +258,9 @@ const AboutSection = () => {
                 alt="Therapy session showing children working with a caring therapist in a bright, welcoming environment"
                 className="rounded-2xl shadow-2xl w-full h-auto hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute -bottom-6 -right-6 bg-black text-white p-6 rounded-2xl shadow-xl animate-pulse">
-                <p className="text-2xl font-bold">7+</p>
-                <p className="text-sm">Years of Service</p>
+              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-black text-white p-3 sm:p-6 rounded-2xl shadow-xl animate-pulse">
+                <p className="text-lg sm:text-2xl font-bold">7+</p>
+                <p className="text-xs sm:text-sm">Years of Service</p>
               </div>
             </div>
           </div>
@@ -322,21 +322,21 @@ const ProgramsSection = () => {
   ]
 
   return (
-    <section id="programs-section" className="py-20 bg-gray-50">
+    <section id="programs-section" className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Our Services</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Discover our comprehensive range of services designed to support individuals with disabilities at every
             stage of their journey.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {programs.map((program, index) => (
             <Card
               key={index}
@@ -352,19 +352,19 @@ const ProgramsSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <program.icon className="h-8 w-8 text-white" />
+              <CardHeader className="text-center pb-4 px-4 sm:px-6">
+                <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-2xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <program.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-900">{program.title}</CardTitle>
+                <CardTitle className="text-lg sm:text-xl font-bold text-gray-900">{program.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 mb-4 text-center">{program.description}</CardDescription>
+              <CardContent className="px-4 sm:px-6">
+                <CardDescription className="text-gray-600 mb-4 text-center text-sm sm:text-base">{program.description}</CardDescription>
                 <ul className="space-y-2">
                   {program.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-700">
-                      <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
-                      {feature}
+                    <li key={featureIndex} className="flex items-center text-xs sm:text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-black rounded-full mr-2 sm:mr-3 flex-shrink-0"></div>
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -423,20 +423,20 @@ const ImpactSection = () => {
   }, [])
 
   return (
-    <section id="impact-section" className="py-20 bg-black text-white">
+    <section id="impact-section" className="py-12 sm:py-16 md:py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Impact</h2>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Our Impact</h2>
+          <p className="text-base sm:text-lg md:text-xl opacity-90 max-w-3xl mx-auto px-4">
             Every number represents a life changed, a family supported, and a community strengthened.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -444,14 +444,14 @@ const ImpactSection = () => {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <div className="mx-auto w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
-                <stat.icon className="h-10 w-10 text-white" />
+              <div className="mx-auto w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
+                <stat.icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
               </div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 sm:mb-2">
                 {counters[index]}
                 {stat.suffix}
               </div>
-              <div className="text-lg opacity-90">{stat.label}</div>
+              <div className="text-sm sm:text-lg opacity-90">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -499,20 +499,20 @@ const GetInvolvedSection = () => {
   ]
 
   return (
-    <section id="get-involved-section" className="py-20 bg-gray-50">
+    <section id="get-involved-section" className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get Involved</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Get Involved</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             There are many ways to support our mission and make a difference in your community.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
           {ways.map((way, index) => (
             <Card
               key={index}
@@ -528,18 +528,18 @@ const GetInvolvedSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                  <way.icon className="h-8 w-8 text-white" />
+              <CardHeader className="text-center pb-4 px-4 sm:px-6">
+                <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-2xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                  <way.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl font-bold text-gray-900">{way.title}</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl font-bold text-gray-900">{way.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <CardDescription className="text-gray-600 mb-6 text-base leading-relaxed">
+              <CardContent className="text-center px-4 sm:px-6">
+                <CardDescription className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
                   {way.description}
                 </CardDescription>
                 <Link href="/donate">
-                  <Button className="bg-black text-white hover:bg-gray-800 hover:shadow-lg transition-all duration-300 rounded-full px-6 py-2 hover:scale-105">
+                  <Button className="bg-black text-white hover:bg-gray-800 hover:shadow-lg transition-all duration-300 rounded-full px-4 sm:px-6 py-2 hover:scale-105 text-sm sm:text-base">
                     {way.cta}
                   </Button>
                 </Link>
@@ -562,8 +562,8 @@ const HomeBlogSection = () => {
     const load = async () => {
       try {
         setIsLoading(true)
-        const response = await api.get('/blogs')
-        setPosts((response.data || []).slice(0, 3))
+        const response = await api.get('/blogs?page=1&limit=3')
+        setPosts(response.data.blogs || [])
       } catch (error) {
         console.error('Failed to load blog posts:', error)
       } finally {
@@ -590,21 +590,21 @@ const HomeBlogSection = () => {
   }, [])
 
   return (
-    <section id="blog-section" className="py-20 bg-white">
+    <section id="blog-section" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div
-            className={`text-center mb-16 transition-all duration-1000 ${
+            className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Latest from Our Blog</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Latest from Our Blog</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Discover inspiring stories, educational insights, and updates from our music education community.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {isLoading ? (
               // Loading state
               Array.from({ length: 3 }).map((_, index) => (
@@ -616,7 +616,7 @@ const HomeBlogSection = () => {
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
                   <div className="aspect-video bg-gray-200 animate-pulse"></div>
-                  <CardContent className="p-8">
+                  <CardContent className="p-4 sm:p-6 md:p-8">
                     <div className="mb-4">
                       <div className="h-4 bg-gray-200 rounded animate-pulse w-1/3"></div>
                     </div>
@@ -636,96 +636,151 @@ const HomeBlogSection = () => {
             ) : posts.length > 0 ? (
               // Posts content
               posts.map((post: any, index) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-                  <Card
-                    className={`bg-white shadow-xl border-0 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 ${
-                      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                    }`}
-                    style={{ transitionDelay: `${index * 200}ms` }}
-                  >
-                    <div className="relative">
-                      <div className="aspect-video overflow-hidden">
-                        {post.url ? (
-                          <a 
-                            href={post.url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="block w-full h-full"
-                            onClick={(e) => e.stopPropagation()}
-                          >
+                <div key={post.slug} className="group block">
+                  {post.url ? (
+                    // External link - wrap entire card
+                    <a 
+                      href={post.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Card
+                        className={`bg-white shadow-xl border-0 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 ${
+                          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                        }`}
+                        style={{ transitionDelay: `${index * 200}ms` }}
+                      >
+                        <div className="relative">
+                          <div className="aspect-video overflow-hidden">
                             <img 
                               src={post.image || '/placeholder.jpg'} 
                               alt={post.title} 
                               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer"
                             />
-                          </a>
-                        ) : (
-                          <img 
-                            src={post.image || '/placeholder.jpg'} 
-                            alt={post.title} 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                          />
-                        )}
-                      </div>
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-black/80 text-white backdrop-blur-sm border-0">
-                          Blog Post
-                        </Badge>
-                      </div>
-                    </div>
-                    
-                    <CardContent className="p-8">
-                      <div className="mb-4">
-                        <p className="text-sm text-gray-500 font-medium">
-                          {new Date(post.createdAt).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </p>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-black transition-colors duration-300">
-                        {post.title}
-                      </h3>
-                      
-                      {post.description && (
-                        <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
-                          {post.description}
-                        </p>
-                      )}
-                      
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
-                            <BookOpen className="h-4 w-4 text-gray-600" />
                           </div>
-                          <span className="text-sm text-gray-500">Harmony 4 All</span>
+                          <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
+                            <Badge className="bg-black/80 text-white backdrop-blur-sm border-0 text-xs sm:text-sm">
+                              External Link
+                            </Badge>
+                          </div>
                         </div>
                         
-                        <div className="flex items-center text-black transition-colors duration-300">
-                          <span className="text-sm font-medium mr-2">Read More</span>
-                          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        <CardContent className="p-4 sm:p-6 md:p-8">
+                          <div className="mb-3 sm:mb-4">
+                            <p className="text-xs sm:text-sm text-gray-500 font-medium">
+                              {new Date(post.createdAt).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                              })}
+                            </p>
+                          </div>
+                          
+                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 line-clamp-2 group-hover:text-black transition-colors duration-300">
+                            {post.title}
+                          </h3>
+                          
+                          {post.description && (
+                            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 line-clamp-3 leading-relaxed">
+                              {post.description}
+                            </p>
+                          )}
+                          
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <BookOpen className="h-3 w-3 sm:h-4 sm:w-4 text-gray-600" />
+                              </div>
+                              <span className="text-xs sm:text-sm text-gray-500">Harmony 4 All</span>
+                            </div>
+                            
+                            <div className="flex items-center text-black transition-colors duration-300">
+                              <span className="text-xs sm:text-sm font-medium mr-1 sm:mr-2">Visit Link</span>
+                              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </a>
+                  ) : (
+                    // Internal link - wrap entire card
+                    <Link href={`/blog/${post.slug}`} className="block">
+                      <Card
+                        className={`bg-white shadow-xl border-0 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 ${
+                          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                        }`}
+                        style={{ transitionDelay: `${index * 200}ms` }}
+                      >
+                        <div className="relative">
+                          <div className="aspect-video overflow-hidden">
+                            <img 
+                              src={post.image || '/placeholder.jpg'} 
+                              alt={post.title} 
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                          </div>
+                          <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
+                            <Badge className="bg-black/80 text-white backdrop-blur-sm border-0 text-xs sm:text-sm">
+                              Blog Post
+                            </Badge>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                        
+                        <CardContent className="p-4 sm:p-6 md:p-8">
+                          <div className="mb-3 sm:mb-4">
+                            <p className="text-xs sm:text-sm text-gray-500 font-medium">
+                              {new Date(post.createdAt).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                              })}
+                            </p>
+                          </div>
+                          
+                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 line-clamp-2 group-hover:text-black transition-colors duration-300">
+                            {post.title}
+                          </h3>
+                          
+                          {post.description && (
+                            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 line-clamp-3 leading-relaxed">
+                              {post.description}
+                            </p>
+                          )}
+                          
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <BookOpen className="h-3 w-3 sm:h-4 sm:w-4 text-gray-600" />
+                              </div>
+                              <span className="text-xs sm:text-sm text-gray-500">Harmony 4 All</span>
+                            </div>
+                            
+                            <div className="flex items-center text-black transition-colors duration-300">
+                              <span className="text-xs sm:text-sm font-medium mr-1 sm:mr-2">Read More</span>
+                              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  )}
+                </div>
               ))
             ) : (
               // Empty state
-              <div className="lg:col-span-3 text-center py-12">
-                <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <BookOpen className="h-12 w-12 text-gray-400" />
+              <div className="col-span-1 sm:col-span-2 lg:col-span-3 text-center py-8 sm:py-12">
+                <div className="w-16 h-16 sm:w-24 sm:h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <BookOpen className="h-8 w-8 sm:h-12 sm:w-12 text-gray-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">No Blog Posts Yet</h3>
-                <p className="text-gray-600 mb-8 max-w-md mx-auto">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">No Blog Posts Yet</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 max-w-md mx-auto px-4">
                   We're working on creating amazing content for our community. Check back soon for inspiring stories and educational insights!
                 </p>
                 <Link href="/blog">
-                  <Button className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105">
+                  <Button className="bg-black text-white hover:bg-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 hover:scale-105 text-sm sm:text-base">
                     Visit Our Blog
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                 </Link>
               </div>
@@ -734,14 +789,14 @@ const HomeBlogSection = () => {
 
           {!isLoading && posts.length > 0 && (
             <div
-              className={`text-center mt-12 transition-all duration-1000 delay-500 ${
+              className={`text-center mt-8 sm:mt-12 transition-all duration-1000 delay-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               <Link href="/blog">
-                <Button className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+                <Button className="bg-black text-white hover:bg-gray-800 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
                   View All Blog Posts
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </Link>
             </div>
@@ -768,7 +823,7 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen p:0 overflow-x-hidden">
       <HeroCarousel />
       <AboutSection />
       <ProgramsSection />

@@ -95,9 +95,9 @@ export default function AccessibilityPage() {
 
 
       {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4">
+      <div className="bg-gray-50 py-3 sm:py-4">
         <div className="container mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm">
+          <div className="flex items-center space-x-2 text-xs sm:text-sm">
             <Link href="/" className="text-black hover:text-gray-800">
               Home
             </Link>
@@ -108,15 +108,15 @@ export default function AccessibilityPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div
             className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Accessibility Statement</h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Accessibility Statement</h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed px-4">
               Harmony 4 All is committed to ensuring digital accessibility for people with disabilities. We continually
               improve the user experience for everyone and apply relevant accessibility standards.
             </p>
@@ -125,11 +125,11 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2
-              className={`text-4xl font-bold text-gray-900 text-center mb-12 transition-all duration-1000 ${
+              className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
@@ -140,13 +140,13 @@ export default function AccessibilityPage() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <CardContent className="p-8">
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <CardContent className="p-6 sm:p-8">
+                <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
                   At Harmony 4 All, accessibility is not just a compliance requirement—it's a core value that reflects
                   our mission to serve individuals with disabilities. We believe that everyone deserves equal access to
                   information and functionality, and we are dedicated to providing an inclusive digital experience.
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
                   Our website is designed and developed with accessibility in mind, following established guidelines and
                   best practices. We regularly test our site with assistive technologies and gather feedback from users
                   with disabilities to ensure we meet their needs effectively.
@@ -158,17 +158,17 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Accessibility Features */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2
-              className={`text-4xl font-bold text-gray-900 text-center mb-16 transition-all duration-1000 ${
+              className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               Accessibility Features
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
               {accessibilityFeatures.map((category, index) => (
                 <Card
                   key={index}
@@ -178,19 +178,19 @@ export default function AccessibilityPage() {
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
                   <CardHeader>
-                    <CardTitle className="flex items-center text-xl font-bold text-gray-900">
-                      <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mr-4">
-                        <category.icon className="h-6 w-6 text-white" />
+                    <CardTitle className="flex items-center text-lg sm:text-xl font-bold text-gray-900">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                        <category.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                       </div>
                       {category.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 sm:space-y-3">
                       {category.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-black mr-3 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
+                          <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-black mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm sm:text-base text-gray-700">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -203,17 +203,17 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Standards Compliance */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2
-              className={`text-4xl font-bold text-gray-900 text-center mb-16 transition-all duration-1000 ${
+              className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               Standards Compliance
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {standards.map((standard, index) => (
                 <Card
                   key={index}
@@ -222,15 +222,15 @@ export default function AccessibilityPage() {
                   }`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{standard.name}</h3>
-                        <p className="text-gray-600">{standard.description}</p>
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                      <div className="mb-3 sm:mb-0">
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{standard.name}</h3>
+                        <p className="text-sm sm:text-base text-gray-600">{standard.description}</p>
                       </div>
-                      <div className="ml-4">
-                        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                          <CheckCircle className="h-4 w-4 mr-2" />
+                      <div className="sm:ml-4">
+                        <span className="inline-flex items-center px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium bg-green-100 text-green-800">
+                          <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                           {standard.status}
                         </span>
                       </div>
@@ -244,11 +244,11 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Assistive Technologies */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2
-              className={`text-4xl font-bold text-gray-900 text-center mb-12 transition-all duration-1000 ${
+              className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
@@ -259,15 +259,15 @@ export default function AccessibilityPage() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <CardContent className="p-8">
-                <p className="text-lg text-gray-700 mb-6">
+              <CardContent className="p-6 sm:p-8">
+                <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4 sm:mb-6">
                   Our website is designed to be compatible with a wide range of assistive technologies, including:
                 </p>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
                   {assistiveTechnologies.map((tech, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-black mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{tech}</span>
+                      <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-black mr-2 sm:mr-3 flex-shrink-0" />
+                      <span className="text-sm sm:text-base text-gray-700">{tech}</span>
                     </div>
                   ))}
                 </div>
@@ -278,36 +278,36 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Feedback and Contact */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2
-              className={`text-4xl font-bold text-gray-900 text-center mb-12 transition-all duration-1000 ${
+              className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               Feedback and Support
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
               <Card
                 className={`shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Report Accessibility Issues</h3>
-                  <p className="text-gray-700 mb-6">
+                <CardContent className="p-6 sm:p-8">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Report Accessibility Issues</h3>
+                  <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
                     If you encounter any accessibility barriers on our website, please let us know. We take all feedback
                     seriously and will work to address issues promptly.
                   </p>
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <div className="flex items-center">
-                      <Phone className="h-5 w-5 text-black mr-3" />
-                      <span className="text-gray-700">(555) 123-4567</span>
+                      <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-black mr-2 sm:mr-3" />
+                      <span className="text-sm sm:text-base text-gray-700">(555) 123-4567</span>
                     </div>
                     <div className="flex items-center">
-                      <Mail className="h-5 w-5 text-black mr-3" />
-                      <span className="text-gray-700">accessibility@harmony4all.org</span>
+                      <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-black mr-2 sm:mr-3" />
+                      <span className="text-sm sm:text-base text-gray-700">accessibility@harmony4all.org</span>
                     </div>
                   </div>
                 </CardContent>
@@ -318,13 +318,13 @@ export default function AccessibilityPage() {
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Alternative Formats</h3>
-                  <p className="text-gray-700 mb-6">
+                <CardContent className="p-6 sm:p-8">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Alternative Formats</h3>
+                  <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
                     If you need information from our website in an alternative format, such as large print, Braille, or
                     audio format, please contact us and we will provide it within a reasonable timeframe.
                   </p>
-                  <Button className="bg-black hover:bg-gray-800 text-white rounded-full px-6 transition-all duration-300 hover:scale-105">
+                  <Button className="bg-black hover:bg-gray-800 text-white rounded-full px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base transition-all duration-300 hover:scale-105">
                     Request Alternative Format
                   </Button>
                 </CardContent>
@@ -335,11 +335,11 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Ongoing Efforts */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2
-              className={`text-4xl font-bold text-gray-900 mb-8 transition-all duration-1000 ${
+              className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
@@ -350,33 +350,33 @@ export default function AccessibilityPage() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <CardContent className="p-8">
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <CardContent className="p-6 sm:p-8">
+                <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
                   Accessibility is an ongoing effort, not a one-time achievement. We continuously monitor and improve
                   our website's accessibility through:
                 </p>
-                <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 text-left">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Regular Testing</h4>
-                    <p className="text-gray-700">
+                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Regular Testing</h4>
+                    <p className="text-sm sm:text-base text-gray-700">
                       Automated and manual testing with various assistive technologies and accessibility tools.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">User Feedback</h4>
-                    <p className="text-gray-700">
+                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">User Feedback</h4>
+                    <p className="text-sm sm:text-base text-gray-700">
                       Actively seeking and incorporating feedback from users with disabilities.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Staff Training</h4>
-                    <p className="text-gray-700">
+                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Staff Training</h4>
+                    <p className="text-sm sm:text-base text-gray-700">
                       Regular training for our development and content teams on accessibility best practices.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Standards Updates</h4>
-                    <p className="text-gray-700">
+                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Standards Updates</h4>
+                    <p className="text-sm sm:text-base text-gray-700">
                       Staying current with evolving accessibility standards and implementing improvements.
                     </p>
                   </div>
@@ -388,13 +388,13 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Last Updated */}
-      <section className="py-12 bg-white">
+      <section className="py-8 sm:py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               <strong>Last Updated:</strong> December 2024
             </p>
-            <p className="text-gray-600 mt-2">
+            <p className="text-sm sm:text-base text-gray-600 mt-2">
               This accessibility statement is reviewed and updated regularly to reflect our current accessibility
               efforts and compliance status.
             </p>

@@ -134,9 +134,9 @@ export default function ResourcesPage() {
     <div className="min-h-screen bg-white">
 
       {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4">
+      <div className="bg-gray-50 py-3 sm:py-4">
         <div className="container mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm">
+          <div className="flex items-center space-x-2 text-xs sm:text-sm">
             <Link href="/" className="text-black hover:text-gray-800">
               Home
             </Link>
@@ -147,15 +147,15 @@ export default function ResourcesPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div
             className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Family Resources</h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Family Resources</h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed px-4">
               Comprehensive resources, guides, and support materials to help families navigate their journey with us.
               Everything you need to support your loved one's growth and development.
             </p>
@@ -164,31 +164,31 @@ export default function ResourcesPage() {
       </section>
 
       {/* Quick Links */}
-      <section className="py-12 bg-white">
+      <section className="py-8 sm:py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2
-              className={`text-3xl font-bold text-gray-900 text-center mb-12 transition-all duration-1000 ${
+              className={`text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-12 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               Quick Access
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {quickLinks.map((link, index) => (
                 <Card
                   key={index}
-                  className={`text-center shadow-lg border-0 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-500 ${
+                  className={`text-center shadow-lg border-0 rounded-xl sm:rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-500 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <link.icon className="h-6 w-6 text-white" />
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <link.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                     </div>
-                    <h3 className="font-bold text-gray-900 mb-2">{link.title}</h3>
-                    <p className="text-gray-600 text-sm">{link.content}</p>
+                    <h3 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">{link.title}</h3>
+                    <p className="text-gray-600 text-xs sm:text-sm">{link.content}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -198,21 +198,21 @@ export default function ResourcesPage() {
       </section>
 
       {/* Resource Categories */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div
-              className={`text-center mb-16 transition-all duration-1000 ${
+              className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Resource Library</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Resource Library</h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                 Browse our comprehensive collection of guides, tools, and materials organized by category.
               </p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {resourceCategories.map((category, categoryIndex) => (
                 <div
                   key={categoryIndex}
@@ -221,39 +221,39 @@ export default function ResourcesPage() {
                   }`}
                   style={{ transitionDelay: `${categoryIndex * 300}ms` }}
                 >
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{category.title}</h3>
-                    <p className="text-gray-600">{category.description}</p>
+                  <div className="mb-6 sm:mb-8">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{category.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-600">{category.description}</p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {category.resources.map((resource, resourceIndex) => (
                       <Card
                         key={resourceIndex}
-                        className="shadow-lg border-0 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
+                        className="shadow-lg border-0 rounded-xl sm:rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300"
                       >
-                        <CardContent className="p-6">
+                        <CardContent className="p-4 sm:p-6">
                           <div className="flex items-start justify-between">
                             <div className="flex-1">
                               <div className="flex items-center mb-2">
                                 {resource.type === "Video" ? (
-                                  <Video className="h-5 w-5 text-black mr-2" />
+                                  <Video className="h-4 w-4 sm:h-5 sm:w-5 text-black mr-2" />
                                 ) : (
-                                  <FileText className="h-5 w-5 text-black mr-2" />
+                                  <FileText className="h-4 w-4 sm:h-5 sm:w-5 text-black mr-2" />
                                 )}
-                                <Badge variant="secondary" className="bg-gray-100 text-gray-700">
+                                <Badge variant="secondary" className="bg-gray-100 text-gray-700 text-xs sm:text-sm">
                                   {resource.type}
                                 </Badge>
                               </div>
-                              <h4 className="font-semibold text-gray-900 mb-2">{resource.name}</h4>
-                              <p className="text-sm text-gray-600">{resource.size || resource.duration}</p>
+                              <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{resource.name}</h4>
+                              <p className="text-xs sm:text-sm text-gray-600">{resource.size || resource.duration}</p>
                             </div>
-                            <div className="flex space-x-2 ml-4">
-                              <Button size="sm" variant="outline" className="rounded-full bg-transparent">
-                                <Download className="h-4 w-4" />
+                            <div className="flex space-x-1 sm:space-x-2 ml-3 sm:ml-4">
+                              <Button size="sm" variant="outline" className="rounded-full bg-transparent p-1 sm:p-2">
+                                <Download className="h-3 w-3 sm:h-4 sm:w-4" />
                               </Button>
-                              <Button size="sm" variant="outline" className="rounded-full bg-transparent">
-                                <ExternalLink className="h-4 w-4" />
+                              <Button size="sm" variant="outline" className="rounded-full bg-transparent p-1 sm:p-2">
+                                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
                               </Button>
                             </div>
                           </div>
@@ -269,34 +269,34 @@ export default function ResourcesPage() {
       </section>
 
       {/* Additional Support */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2
-              className={`text-4xl font-bold text-gray-900 mb-6 transition-all duration-1000 ${
+              className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               Need Additional Support?
             </h2>
             <p
-              className={`text-xl text-gray-600 mb-8 transition-all duration-1000 delay-300 ${
+              className={`text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 transition-all duration-1000 delay-300 px-4 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               Our family support team is here to help you find the resources you need and answer any questions.
             </p>
             <div
-              className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-1000 delay-500 ${
+              className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center transition-all duration-1000 delay-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105"
+                  className="w-full bg-black text-white hover:bg-gray-800 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg rounded-full transition-all duration-300 hover:scale-105"
                 >
-                  <Phone className="mr-2 h-5 w-5" />
+                  <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Contact Support Team
                 </Button>
               </Link>
@@ -304,9 +304,9 @@ export default function ResourcesPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg rounded-full bg-transparent transition-all duration-300 hover:scale-105"
+                  className="w-full border-2 border-black text-black hover:bg-black hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg rounded-full bg-transparent transition-all duration-300 hover:scale-105"
                 >
-                  <BookOpen className="mr-2 h-5 w-5" />
+                  <BookOpen className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   View Programs
                 </Button>
               </Link>

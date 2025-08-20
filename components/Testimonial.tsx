@@ -69,15 +69,15 @@ export const TestimonialsSection = () => {
   const isImageOnLeft = currentTestimonial % 2 === 0
 
   return (
-    <section id="testimonials-section" className="py-20 bg-white">
+    <section id="testimonials-section" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Success Stories</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Success Stories</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Hear from the families, therapists, and volunteers who make our community special.
           </p>
         </div>
@@ -88,7 +88,7 @@ export const TestimonialsSection = () => {
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
-            <div className="grid lg:grid-cols-2 gap-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className={`order-1 ${isImageOnLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                 <div className="aspect-[4/3] overflow-hidden">
@@ -102,30 +102,30 @@ export const TestimonialsSection = () => {
 
               {/* Content Section */}
               <div className={`order-2 ${isImageOnLeft ? 'lg:order-2' : 'lg:order-1'} flex items-center`}>
-                <CardContent className="p-12 lg:p-16 w-full">
+                <CardContent className="p-6 sm:p-8 lg:p-12 xl:p-16 w-full">
                   <div className="text-center lg:text-left">
                     {/* Rating Stars */}
-                    <div className="flex justify-center lg:justify-start mb-6">
+                    <div className="flex justify-center lg:justify-start mb-4 sm:mb-6">
                       {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
                         <Star
                           key={i}
-                          className="h-6 w-6 text-yellow-400 fill-current animate-pulse"
+                          className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-400 fill-current animate-pulse"
                           style={{ animationDelay: `${i * 100}ms` }}
                         />
                       ))}
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed italic">
+                    <blockquote className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 sm:mb-8 leading-relaxed italic">
                       "{testimonials[currentTestimonial].content}"
                     </blockquote>
 
                     {/* Author Info */}
-                    <div className="border-t border-gray-200 pt-6">
-                      <div className="font-bold text-lg text-gray-900 mb-1">
+                    <div className="border-t border-gray-200 pt-4 sm:pt-6">
+                      <div className="font-bold text-base sm:text-lg text-gray-900 mb-1">
                         {testimonials[currentTestimonial].name}
                       </div>
-                      <div className="text-gray-600 font-medium">
+                      <div className="text-gray-600 font-medium text-sm sm:text-base">
                         {testimonials[currentTestimonial].role}
                       </div>
                     </div>
@@ -139,19 +139,19 @@ export const TestimonialsSection = () => {
           <Button
             variant="outline"
             size="icon"
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg hover:shadow-xl rounded-full border-2 border-gray-200 hover:border-gray-300 hover:scale-110 transition-all duration-300 z-10"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg hover:shadow-xl rounded-full border-2 border-gray-200 hover:border-gray-300 hover:scale-110 transition-all duration-300 z-10 w-10 h-10 sm:w-12 sm:h-12"
             onClick={prevTestimonial}
           >
-            <ChevronLeft className="h-6 w-6 text-black" />
+            <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6 text-black" />
           </Button>
 
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg hover:shadow-xl rounded-full border-2 border-gray-200 hover:border-gray-300 hover:scale-110 transition-all duration-300 z-10"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg hover:shadow-xl rounded-full border-2 border-gray-200 hover:border-gray-300 hover:scale-110 transition-all duration-300 z-10 w-10 h-10 sm:w-12 sm:h-12"
             onClick={nextTestimonial}
           >
-            <ChevronRight className="h-6 w-6 text-black" />
+            <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 text-black" />
           </Button>
         </div>
       </div>
