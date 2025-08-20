@@ -42,6 +42,7 @@ export const Footer = () => {
     { text: "Services", href: "/services" },
     { text: "Blog", href: "/blog" },
     { text: "Media", href: "/media" },
+    { text: "Sponsors", href: "/sponsors" },
     { text: "Get Involved", href: "/get-involved" },
     { text: "Contact", href: "/contact" },
     { text: "Privacy Policy", href: "/privacy" },

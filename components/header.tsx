@@ -64,6 +64,7 @@ export const Header = () => {
     // { text: "Resources", href: "/resources" },
     { text: "Blog", href: "/blog" },
     { text: "Media", href: "/media" },
+    { text: "Sponsors", href: "/sponsors" },
     { text: "Get Involved", href: "/get-involved" },
     { text: "Contact", href: "/contact" },
   ]
